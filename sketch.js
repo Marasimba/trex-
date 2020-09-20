@@ -77,7 +77,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-    if(trex.isTouching ( obstaclesGroup) && trex.y >= 159) {
+    if(keyDown("space") && trex.y >= 159) {
       trex.velocityY = -12;
     }
   
@@ -91,9 +91,9 @@ function draw() {
     spawnClouds();
     spawnObstacles();
   
-   /* if(obstaclesGroup.isTouching(trex)){
+    if(obstaclesGroup.isTouching(trex)){
         gameState = END;
-    }*/
+    }
   }
   else if (gameState === END) {
     gameOver.visible = true;
